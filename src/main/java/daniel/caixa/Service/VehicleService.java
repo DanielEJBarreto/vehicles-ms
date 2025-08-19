@@ -62,10 +62,11 @@ public class VehicleService {
         Vehicle vehicle = repository.findByIdOptional(id)
                 .orElseThrow(() -> new VehicleNotFoundException("Veículo não encontrado"));
 
-        // Regra de negócio: só pode alugar se estiver disponível
-        if (newStatus == VehicleStatus.RENTED && vehicle.getStatus() != VehicleStatus.AVAILABLE) {
-            throw new VehicleCanOnlyBeRentedIfAvailableException("Veículo só pode ser alugado se estiver disponível");
-        }
+//        RENTED passou para booking-ms
+//        // Regra de negócio: só pode alugar se estiver disponível
+//        if (newStatus == VehicleStatus.RENTED && vehicle.getStatus() != VehicleStatus.AVAILABLE) {
+//            throw new VehicleCanOnlyBeRentedIfAvailableException("Veículo só pode ser alugado se estiver disponível");
+//        }
 
         vehicle.setStatus(newStatus);
         return mapper.toResponse(vehicle);
