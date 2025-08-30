@@ -4,6 +4,7 @@ import daniel.caixa.DTO.VehicleRequest;
 import daniel.caixa.DTO.VehicleResponse;
 import daniel.caixa.DTO.VehicleStatusUpdateRequest;
 import daniel.caixa.Service.VehicleService;
+import jakarta.annotation.security.RolesAllowed;
 import jakarta.inject.Inject;
 import jakarta.validation.Valid;
 import jakarta.ws.rs.*;
@@ -15,6 +16,7 @@ import java.util.List;
 @Path("/vehicles")
 @Produces(MediaType.APPLICATION_JSON)
 @Consumes(MediaType.APPLICATION_JSON)
+@RolesAllowed({"admin", "user"})
 public class VehicleResource {
 
     @Inject
