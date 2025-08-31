@@ -2,10 +2,11 @@ package daniel.caixa;
 
 import daniel.caixa.Entity.Vehicle;
 import daniel.caixa.Entity.VehicleStatus;
+import io.quarkus.test.junit.QuarkusTest;
 import org.junit.jupiter.api.extension.ExtendWith;
 import org.mockito.junit.jupiter.MockitoExtension;
 
-@ExtendWith(MockitoExtension.class)
+@QuarkusTest
 public class VehicleServiceTests {
 
     //Testar todas as regras de negócio da classe Vehicle (mudança de status)
@@ -16,11 +17,5 @@ public class VehicleServiceTests {
         return vehicle;
     }
 
-    //Um veículo só pode ser alterado para RENTED se seu status atual for AVAILABLE
-//    @Test
-//    public void testVehicleAlterToRENTEDifAVAILABLE() {
-//
-//
-//
-//    }
+
 }
